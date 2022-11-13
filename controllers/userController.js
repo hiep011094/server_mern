@@ -68,6 +68,7 @@ const userController = {
             if (!isMatch) return res.status(400).json({ msg: "Password is incorrect." })
 
             const refresh_token = createRefreshToken({ id: user._id })
+            console.log(refresh_token)
             res.cookie('refresh_token', refresh_token, {
                 httpOnly: true,
                 path: 'user/refresh_token',
